@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einstellungen für Vencord</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link zur CSS-Datei -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .setting {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="color"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Einstellungen für Vencord</h1>
+    
+    <div class="setting">
+        <label for="bgColor">Hintergrundfarbe:</label>
+        <input type="color" id="bgColor" name="bgColor" value="#ffffff">
+    </div>
+
+    <div class="setting">
+        <label for="textColor">Textfarbe:</label>
+        <input type="color" id="textColor" name="textColor" value="#000000">
+    </div>
+
+    <div class="setting">
+        <label for="fontSize">Schriftgröße:</label>
+        <select id="fontSize" name="fontSize">
+            <option value="12">12px</option>
+            <option value="14" selected>14px</option>
+            <option value="16">16px</option>
+            <option value="18">18px</option>
+            <option value="20">20px</option>
+        </select>
+    </div>
+
+    <button id="saveButton">Einstellungen speichern</button>
+
+    <script>
+        const saveButton = document.getElementById('saveButton');
+
+        saveButton.addEventListener('click', () => {
+            const bgColor = document.getElementById('bgColor').value;
+            const textColor = document.getElementById('textColor').value;
+            const fontSize = document.getElementById('fontSize').value;
+
+            // Hier kannst du den Code hinzufügen, um die Einstellungen zu speichern
+            console.log('Einstellungen gespeichert:', {
+                bgColor,
+                textColor,
+                fontSize
+            });
+
+            alert('Einstellungen gespeichert!');
+        });
+    </script>
+</body>
+</html>
